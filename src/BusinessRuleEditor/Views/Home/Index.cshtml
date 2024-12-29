@@ -1,0 +1,51 @@
+﻿@model BusinessRuleEditor.Models.RuleEditorViewModel
+
+@{
+    ViewData["Title"] = "United | Rule Editor";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2">
+            <!-- Content for the left div goes here -->
+            <h5>Rule Category ></h5>
+            <hr />
+            @await Html.PartialAsync("~/Views/Partial/_CategoryPartial.cshtml", Model.Categorys)
+            <div class="col-sm-12 marginTop10px">
+                <input type="text" class="form-control marginTop10px col-sm-12 resetThis" id="txtAddWorkflowCategory"
+                       style="text-transform:lowercase" value="" placeholder="Category Name">
+                <button type="button" id="btnAddCategory" class="btn btn-outline-primary col-sm-7 marginTop10px"
+                        style="padding: 5px;">
+                    + Category
+                </button>
+                <button type="button" id="btnDeleteCategory" class="btn btn-outline-danger col-sm-4 marginTop10px"
+                        style="padding: 5px;margin-left: 8px;">
+                    Delete
+                </button>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <!-- Content for the left div goes here -->
+            <h5>Rules >></h5>
+            <hr />
+            <div id="CategoryRulesPartial">
+                @await Html.PartialAsync("~/Views/Partial/_CategoryRulesPartial.cshtml", Model.CategoryRule)
+            </div>
+
+            <div class="col-sm-12 marginTop10px">
+                <input type="text" class="form-control marginTop10px col-sm-12 resetThis" id="txtAddCategoryRule" value="" placeholder="Rule Name">
+                <button type="button" id="btnAddRule" class="btn btn-outline-primary col-sm-6 marginTop10px">+ Rule </button>
+            </div>
+        </div>
+        <div class="col-sm-7">
+            <!-- Content for the right div goes here -->
+            <h5>Expression</h5>
+            <hr />
+            <div id="RuleDetailsViewPartial" class="row">
+                @await Html.PartialAsync("~/Views/Partial/_RuleDetailsViewPartial.cshtml", Model.CategoryRuleDetail)
+            </div>
+            <br />
+            <br />
+        </div>
+    </div>
+</div>

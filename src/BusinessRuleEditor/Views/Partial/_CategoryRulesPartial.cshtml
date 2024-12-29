@@ -1,0 +1,11 @@
+﻿@model IEnumerable<BusinessRuleEditor.Models.CategoryRule>
+
+<table id="CategoryRules" class="table table-hover">
+    <tbody>
+        @foreach (var rule in Model)
+        {
+            <tr><td>@rule.Rule</td></tr>
+        }        
+    </tbody>
+</table>
+

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>BusinessRuleEditor.Service</AssemblyName>
+    <RootNamespace>BusinessRuleEditor.Service</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessrRuleEditor.Repository\BusinessRuleEditor.Repository.csproj" />
+    <ProjectReference Include="..\BusinessRuleEditor.Entities\BusinessRuleEditor.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

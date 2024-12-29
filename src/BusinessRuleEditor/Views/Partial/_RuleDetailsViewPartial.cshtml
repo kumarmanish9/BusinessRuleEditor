@@ -1,0 +1,78 @@
+﻿@model BusinessRuleEditor.Models.CategoryRuleDetail
+
+<div id="RuleDetailsView">
+    <form id="formRuleDetails">
+
+        <div class="form-group row margin10px">
+            <label for="lblWorkflowName" class="col-sm-3 col-form-label">Category Name</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control resetThis" readonly="readonly" disabled="disabled" id="txtWorkflowName" value="@Model.WorkflowName">
+            </div>
+        </div>
+        <div class="form-group row margin10px">
+            <label for="lblRuleName" class="col-sm-3 col-form-label">Rule Name</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control resetThis" data-oldrulename="@Model.RuleName" id="txtRuleName" value="@Model.RuleName">
+            </div>
+        </div>
+        <hr />
+
+        <div class="form-group row margin10px">
+            <label for="lblSuccessEvent" class="col-sm-3 col-form-label">Success Event</label>
+            <div class="col-sm-9">
+                <textarea type="text" rows="5" , cols="100" class="form-control resetThis" id="txtSuccessEvent">@Model.SuccessEvent</textarea>
+            </div>
+        </div>
+        <div class="form-group row margin10px">
+            <label for="lblErrorMessage" class="col-sm-3 col-form-label">Error Message</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control resetThis" id="txtErrorMessage" value="@Model.ErrorMessage">
+            </div>
+        </div>
+        <div class="form-group row margin10px">
+            <label for="lblErrorType" class="col-sm-3 col-form-label">Error Type</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control resetThis" id="txtErrorType" readonly="readonly" disabled="disabled" value="@Model.ErrorType">
+            </div>
+        </div>
+        <div class="form-group row margin10px">
+            <label for="lblRuleExpressionType" class="col-sm-3 col-form-label">Rule Expression Type</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control resetThis" id="txtRuleExpressionType" readonly="readonly" disabled="disabled" value="@Model.RuleExpressionType">
+            </div>
+        </div>
+        <div class="form-group row margin10px">
+            <label for="lblExpression" class="col-sm-3 col-form-label">Expression</label>
+            <div class="col-sm-9">
+                <textarea type="text" rows="5", cols="100" class="form-control resetThis" id="txtExpression">@Model.Expression</textarea>
+            </div>
+        </div>
+
+        <div class="form-group row margin10px">
+            <span class="col-sm-3"></span>
+            <div class="col-sm-9">
+                <button type="button" id="btnUpdateRule" class="btn btn-outline-primary col-sm-3 marginRight5px">Add/Update</button>
+                <button type="button" id="btnPreviewRule" style="display:none;" class="btn btn-outline-info col-sm-2 marginRight5px">Preview</button>
+                <button type="button" id="btnReseteRule" class="btn btn-outline-secondary col-sm-2 marginRight5px">Cancel</button>
+                <button type="button" id="btnDeleteRule" class="btn btn-outline-danger col-sm-2">Delete</button>
+            </div>
+        </div>
+        <div class="form-group row margin10px">
+            <span class="col-sm-3"></span>
+            <div class="col-sm-9">
+                <span class="text-warning resetThis">Note: All fields are mandatory.</span><br />
+                <span class="text-info">Allowed parameters:<br />
+                    <code>
+                        input.WorkflowName = "string"
+                        input.EventType = "string"
+                        input.EventReason = "string"
+                        input.IsOvernight = true/false
+                        input.DelayInMinutes = number
+                        input.CabinType = "string"
+                        input.PaxStatus = "string"
+                    </code>
+                </span>
+            </div>
+        </div>
+    </form>
+</div>

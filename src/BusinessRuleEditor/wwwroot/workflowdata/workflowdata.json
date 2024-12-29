@@ -1,0 +1,52 @@
+[
+  {
+    "WorkflowName": "controllable",
+    "Rules": [
+      {
+        "RuleName": "Hotel",
+        "SuccessEvent": "Hotel",
+        "ErrorMessage": "One or more adjust rules failed.",
+        "ErrorType": "Error",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "input.WorkflowName = \u0022controllable\u0022 AND input.EventType = \u0022Controllable\u0022 AND input.IsOvernight = true AND input.DelayInMinutes \u003E= 180 AND input.CabinType = \u0022Economy\u0022"
+      },
+      {
+        "RuleName": "Meal",
+        "SuccessEvent": "Meal",
+        "ErrorMessage": "One or more adjust rules failed.",
+        "ErrorType": "Error",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "input.WorkflowName = \u0022controllable\u0022 AND input.EventType = \u0022Controllable\u0022 AND input.IsOvernight = false AND input.DelayInMinutes \u003E 100 AND input.DelayInMinutes \u003C 200 "
+      },
+      {
+        "RuleName": "HotelAndMeal",
+        "SuccessEvent": "HotelAndMeal",
+        "ErrorMessage": "One or more adjust rules failed.",
+        "ErrorType": "Error",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "input.WorkflowName = \u0022controllable\u0022 AND input.EventType = \u0022Controllable\u0022 AND input.IsOvernight = true AND input.DelayInMinutes \u003E= 180 AND (input.CabinType = \u0022Premium\u0022 OR input.CabinType = \u0022Business\u0022)"
+      }
+    ]
+  },
+  {
+    "WorkflowName": "uncontrollable",
+    "Rules": [
+      {
+        "RuleName": "Voucher",
+        "SuccessEvent": "Voucher",
+        "ErrorMessage": "One or more adjust rules failed.",
+        "ErrorType": "Error",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "input.WorkflowName = \u0022UnControllable\u0022 AND input.EventType = \u0022UnControllable\u0022 AND input.DelayInMinutes \u003E= 90 AND AND input.DelayInMinutes \u003C120"
+      },
+      {
+        "RuleName": "Miles",
+        "SuccessEvent": "Miles",
+        "ErrorMessage": "One or more adjust rules failed.",
+        "ErrorType": "Error",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "input.WorkflowName = \u0022UnControllable\u0022 AND input.EventType = \u0022UnControllable\u0022 AND input.DelayInMinutes \u003E= 120"
+      }
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@model IEnumerable<SelectListItem>
+
+<select id="ddlWorkflowCategory" class="form-select" aria-label="Default select example" asp-items="@(new SelectList(Model, "Value", "Text"))"></select>
